@@ -1,18 +1,17 @@
 import { Injectable } from '@angular/core';
-import {FoodNode} from "../types/foodnodes"
+
 import { Observable, Subject } from 'rxjs';
 @Injectable({
   providedIn: 'root'
 })
-export class DataServiceService {
+export class TabDataService {
   private readonly subject = new Subject<any>;
   public _treedataObsevable :Observable<any>=this.subject.asObservable();
-  set(node:FoodNode[]):void{
 
+  updateTabData(tabData:any):void{
+    this.subject.next(tabData);
   }
-  get():unknown{
-  return null
-  }
+ 
   constructor() {
    
    }
