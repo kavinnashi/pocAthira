@@ -2,14 +2,14 @@
     <!-- This is the tree node template for leaf nodes -->
     <!-- There is inline padding applied to this node using styles.
       This padding value depends on the mat-icon-button width. -->
-    <mat-tree-node *matTreeNodeDef="let node" matTreeNodeToggle>
-        {{node.name}}
+    <mat-tree-node (click)="openFile()" *matTreeNodeDef="let node" matTreeNodeToggle>
+       {{node.name}} 
     </mat-tree-node>
     <!-- This is the tree node template for expandable nodes -->
     <mat-nested-tree-node class="dropzone" fileDragDrop *matTreeNodeDef="let node; when: hasChild">
         <div class="mat-tree-node">
           <button mat-icon-button matTreeNodeToggle
-                  [attr.aria-label]="'Toggle ' + node.name">
+                  [attr.aria-label]="'Toggle ' + node.name" >
             <mat-icon class="mat-icon-rtl-mirror">
               {{treeControl.isExpanded(node) ? 'expand_more' : 'chevron_right'}}
             </mat-icon>
@@ -18,7 +18,7 @@
           {{node.name}} <mat-icon class="mat-icon-note_add" fontIcon="add"></mat-icon>
           <div class="centered" >
             <input type="file"  name="file" id="file" (change)="onFileChange($event,node)" multiple>
-            <label ><span class="textLink">Select your file</span> or Drop it here!</label>
+            <label for="file"><span class="textLink">Select your file</span> or Drop it here!</label>
           </div>
           
         </div>

@@ -55,4 +55,8 @@ export class FileTreeComponent {
     this.dataSource.data = [];
     this.dataSource.data = TREE_DATA;
   }
+
+  openFile(){
+    alert("dd")
+  }
 }
