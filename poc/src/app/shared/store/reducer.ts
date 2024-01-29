@@ -11,7 +11,7 @@ const fileFeature = createFeature({
     reducer: createReducer(
         initialTabState,
         on(fileActions.selectFile,(state,action)=>({...state, 
-           tabs:[action.tabs]
+           tabs:[...state.tabs,...[action.tabs]]
         }))
 
     )

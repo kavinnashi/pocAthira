@@ -19,5 +19,6 @@ export class TabwrapperComponent {
     tabs:this.store.select(selectTabs)
     
   })
+  
 
 }

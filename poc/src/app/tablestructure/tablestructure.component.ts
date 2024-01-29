@@ -27,7 +27,7 @@ import { CommonModule } from '@angular/common';
 
 
 export class TablestructureComponent {
-  
+  @Input() dataSource:any=[]
   constructor(private store:Store){}
    data$=combineLatest({
     tabs:this.store.select(selectTabs),
