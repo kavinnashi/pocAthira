@@ -5,6 +5,8 @@ import { PeriodicElement } from "../types/periodicElementInterface";
 export const fileActions= createActionGroup({
     source: "file",
     events: {
-        "select file":props<{tabs:TabsInterface}>()
+        "select file":props<{tabs:TabsInterface}>(),
+        "update file sort":props<{ index: number, tabs: TabsInterface}>(),
+        "select tab ":props<{ index: number}>()
     }
 })

@@ -1,7 +1,7 @@
 <ng-container *ngIf="data$|async as data">
-    {{data.tabs|json}}
-    <mat-tab-group>
-    <mat-tab *ngFor="let tab of data.tabs" [label]="tab.label">
+    <mat-tab-group 
+    (selectedIndexChange)="news($event)">
+    <mat-tab *ngFor="let tab of data.tabs let index " [label]="tab.label" >
       <!-- Content for each tab goes here -->
       <ng-template matTabContent>
         

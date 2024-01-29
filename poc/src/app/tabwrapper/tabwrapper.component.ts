@@ -5,6 +5,7 @@ import { selectTabs } from '../shared/store/reducer';
 import {MatTabsModule} from '@angular/material/tabs';
 import {TablestructureComponent} from "../tablestructure/tablestructure.component";
 import { CommonModule } from '@angular/common';
+import { fileActions } from '../shared/store/actions';
 @Component({
   selector: 'app-tabwrapper',
   standalone: true,
@@ -19,6 +20,9 @@ export class TabwrapperComponent {
     tabs:this.store.select(selectTabs)
     
   })
-  
+  news(index:any){
+    this.store.dispatch(fileActions.selectTab(index));
+
+  }
 
 }
