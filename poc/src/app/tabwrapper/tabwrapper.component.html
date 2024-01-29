@@ -1,0 +1,10 @@
+<ng-container *ngIf="data$|async as data"><mat-tab-group>
+    <mat-tab *ngFor="let tab of data.tabs" [label]="tab.label">
+      <!-- Content for each tab goes here -->
+      <ng-template matTabContent>
+        
+        <app-tablestructure ></app-tablestructure>
+      </ng-template>
+    </mat-tab>
+  </mat-tab-group>
+</ng-container>

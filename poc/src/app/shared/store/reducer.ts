@@ -2,7 +2,7 @@ import { createFeature, createReducer, on} from "@ngrx/store"
 import { fileActions } from "./actions";
 import { TabStateInterface } from "../types/tabstateInterface";
 const initialTabState:TabStateInterface={
-   tabs:null
+   tabs:[]
     
 }
 

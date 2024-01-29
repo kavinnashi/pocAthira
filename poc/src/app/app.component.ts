@@ -2,11 +2,13 @@ import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
 import { FileTreeComponent } from './file-tree/file-tree.component';
-import {TablestructureComponent} from "./tablestructure/tablestructure.component";
+
+import {TabwrapperComponent} from "./tabwrapper/tabwrapper.component"
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [CommonModule, RouterOutlet,FileTreeComponent,TablestructureComponent],
+  imports: [CommonModule, RouterOutlet,FileTreeComponent
+  ,TabwrapperComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })

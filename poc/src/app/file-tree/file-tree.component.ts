@@ -21,6 +21,36 @@ const ELEMENT_DATA: PeriodicElement[] = [
   {position: 9, name: 'Fluorine', weight: 18.9984, symbol: 'F'},
   {position: 10, name: 'Neon', weight: 20.1797, symbol: 'Ne'},
 ];
+const ELEMENT_DATA1=[
+	{
+		color: "red",
+		value: "#f00"
+	},
+	{
+		color: "green",
+		value: "#0f0"
+	},
+	{
+		color: "blue",
+		value: "#00f"
+	},
+	{
+		color: "cyan",
+		value: "#0ff"
+	},
+	{
+		color: "magenta",
+		value: "#f0f"
+	},
+	{
+		color: "yellow",
+		value: "#ff0"
+	},
+	{
+		color: "black",
+		value: "#000"
+	}
+];
 const TREE_DATA: FoodNode[] = [
   {
     name: 'Fruit',
@@ -75,7 +105,8 @@ export class FileTreeComponent {
 
   openFile(name:string){
     if(name=="Banana"){
-      console.log("d")
+      const tabs:TabsInterface={label:"file2",content:{table:ELEMENT_DATA1,sorting:null}};
+      this.store.dispatch(fileActions.selectFile({tabs}));
     }
     else{
       const tabs:TabsInterface={label:"file1",content:{table:ELEMENT_DATA,sorting:null}};
